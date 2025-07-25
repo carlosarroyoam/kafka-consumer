@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class MessageConsumer {
   private static final Logger log = LoggerFactory.getLogger(MessageConsumer.class);
-  private static final String TOPIC_NAME = "com.carlosarroyoam.kafka.messages";
+  private static final String MESSAGES_TOPIC_NAME = "com.carlosarroyoam.kafka.messages";
 
-  @KafkaListener(topics = { TOPIC_NAME }, groupId = "com.carlosarroyoam.kafka.messages.consumer")
+  @KafkaListener(topics = { MESSAGES_TOPIC_NAME }, groupId = "com.carlosarroyoam.kafka.messages.consumer")
   public void consume(Message message) {
     log.info("Received message: {}", message);
   }

@@ -1,7 +1,7 @@
 package com.carlosarroyoam.service.kafka.messages;
 
 import com.carlosarroyoam.service.kafka.config.KafkaConsumerConfig;
-import com.carlosarroyoam.service.kafka.messages.event.MessageSentEvent;
+import com.carlosarroyoam.service.kafka.messages.event.MessageCreatedEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -12,8 +12,8 @@ public class MessageConsumer {
   private static final Logger log = LoggerFactory.getLogger(MessageConsumer.class);
 
   @KafkaListener(topics = {
-      KafkaConsumerConfig.MESSAGES_TOPIC_NAME }, groupId = "com.carlosarroyoam.kafka.messages.consumer")
-  public void consume(MessageSentEvent messageSentEvent) {
-    log.info("Received message: {}", messageSentEvent);
+      KafkaConsumerConfig.MESSAGES_TOPIC_NAME }, groupId = "com.carlosarroyoam.kafka.messages.created.consumer")
+  public void consume(MessageCreatedEvent event) {
+    log.info("Received message: {}", event);
   }
 }

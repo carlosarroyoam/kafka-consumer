@@ -10,11 +10,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
+import org.springframework.kafka.support.converter.MessageConverter;
+import org.springframework.kafka.support.converter.StringJsonMessageConverter;
 import org.springframework.kafka.support.serializer.JsonDeserializer;
 
 @Configuration
 public class KafkaConsumerConfig {
-  public static final String MESSAGES_TOPIC_NAME = "com.carlosarroyoam.kafka.messages";
+  public static final String MESSAGES_TOPIC_NAME = "com.carlosarroyoam.kafka.messages.created";
 
   @Value("${spring.kafka.bootstrap-servers}")
   private String bootstrapServers;

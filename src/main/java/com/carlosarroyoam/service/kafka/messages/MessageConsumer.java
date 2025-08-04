@@ -1,6 +1,6 @@
 package com.carlosarroyoam.service.kafka.messages;
 
-import com.carlosarroyoam.service.kafka.config.KafkaConsumerConfig;
+import com.carlosarroyoam.service.kafka.core.config.KafkaConsumerConfig;
 import com.carlosarroyoam.service.kafka.messages.event.MessageCreatedEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

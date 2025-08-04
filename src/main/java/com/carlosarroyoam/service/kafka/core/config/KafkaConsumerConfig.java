@@ -1,4 +1,4 @@
-package com.carlosarroyoam.service.kafka.config;
+package com.carlosarroyoam.service.kafka.core.config;
 
 import java.util.HashMap;
 import java.util.Map;

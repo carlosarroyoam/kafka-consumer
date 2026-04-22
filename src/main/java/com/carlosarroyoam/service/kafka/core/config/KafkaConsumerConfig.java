@@ -26,14 +26,15 @@ public class KafkaConsumerConfig {
     configProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
     configProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
     configProps.put(JsonDeserializer.TRUSTED_PACKAGES, "com.carlosarroyoam.service.*");
-    return new DefaultKafkaConsumerFactory<>(configProps, new StringDeserializer(),
-        new JsonDeserializer<>(Object.class));
+    return new DefaultKafkaConsumerFactory<>(
+        configProps, new StringDeserializer(), new JsonDeserializer<>(Object.class));
   }
 
   @Bean
   ConcurrentKafkaListenerContainerFactory<String, Object> kafkaListenerContainerFactory(
       ConsumerFactory<String, Object> consumerFactory) {
-    ConcurrentKafkaListenerContainerFactory<String, Object> factory = new ConcurrentKafkaListenerContainerFactory<>();
+    ConcurrentKafkaListenerContainerFactory<String, Object> factory =
+        new ConcurrentKafkaListenerContainerFactory<>();
     factory.setConsumerFactory(consumerFactory);
     return factory;
   }

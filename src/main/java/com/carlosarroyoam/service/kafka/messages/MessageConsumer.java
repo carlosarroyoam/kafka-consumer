@@ -11,8 +11,9 @@ import org.springframework.stereotype.Service;
 public class MessageConsumer {
   private static final Logger log = LoggerFactory.getLogger(MessageConsumer.class);
 
-  @KafkaListener(topics = {
-      KafkaConsumerConfig.MESSAGES_CREATED_TOPIC_NAME }, groupId = "com.carlosarroyoam.kafka.messages.created.consumer")
+  @KafkaListener(
+      topics = {KafkaConsumerConfig.MESSAGES_CREATED_TOPIC_NAME},
+      groupId = "com.carlosarroyoam.kafka.messages.created.consumer")
   public void consume(MessageCreatedEvent event) {
     log.info("Received message: {}", event);
   }

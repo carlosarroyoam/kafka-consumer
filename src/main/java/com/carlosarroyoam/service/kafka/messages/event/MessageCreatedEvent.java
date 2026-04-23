@@ -1,8 +1,10 @@
 package com.carlosarroyoam.service.kafka.messages.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class MessageCreatedEvent {
   private Integer id;
   private String content;

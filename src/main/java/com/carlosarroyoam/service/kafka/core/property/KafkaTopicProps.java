@@ -1,4 +1,4 @@
-package com.carlosarroyoam.service.kafka.core.config;
+package com.carlosarroyoam.service.kafka.core.property;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
